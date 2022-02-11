@@ -6,6 +6,9 @@
       <h2 class="mb-4">Recent Project</h2>
       <ProjectList />
     </section>
+    <div>
+      <ContactForm />
+    </div>
   </div>
 </template>
 
@@ -13,4 +16,5 @@
 import HeroImage from "@/components/home/HeroImage.vue";
 import AboutBrief from "@/components/home/AboutBrief.vue";
 import ProjectList from "@/components/projects/ProjectList.vue";
+import ContactForm from "@/components/contact/ContactForm.vue";
 </script>

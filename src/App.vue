@@ -1,7 +1,7 @@
 <template>
   <TheNavigation :is-dark-mode="isDarkMode" />
   <div class="pt-[66px]">
-    <main class="px-4">
+    <main class="px-4 py-20">
       <router-view></router-view>
     </main>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed z-20 flex w-full items-center justify-between bg-orange-50/30 py-3 px-2 backdrop-blur-sm dark:bg-zinc-800"
+    class="fixed z-20 flex w-full items-center justify-between bg-orange-50/30 py-3 px-2 dark:bg-zinc-800"
   >
     <router-link
       class="inline-block font-['Comforter'] text-2xl font-bold"
@@ -15,17 +15,19 @@
         leave-active-class="animate-fade-down-reverse"
         mode="out-in"
       >
-        <button v-if="isDarkMode" class="rounded-md bg-orange-400 p-2">
-          <SunIcon
-            class="fill-neutral-800"
-            @click="setThemeMode('light', 'dark')"
-          />
+        <button
+          v-if="isDarkMode"
+          class="rounded-md bg-orange-400 p-2"
+          @click="setThemeMode('light', 'dark')"
+        >
+          <SunIcon class="fill-neutral-800" />
         </button>
-        <button v-else class="rounded-md bg-indigo-800 p-2">
-          <MoonIcon
-            class="fill-white/90"
-            @click="setThemeMode('dark', 'light')"
-          />
+        <button
+          v-else
+          class="rounded-md bg-indigo-800 p-2"
+          @click="setThemeMode('dark', 'light')"
+        >
+          <MoonIcon class="fill-white/90" />
         </button>
       </Transition>
 

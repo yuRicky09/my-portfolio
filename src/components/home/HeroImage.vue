@@ -1,5 +1,5 @@
 <template>
-  <section class="section grid grid-cols-1 gap-8 pb-8 md:min-h-screen">
+  <section class="section grid grid-cols-1 gap-8 md:min-h-screen">
     <div class="hero-image load-hidden -mx-4">
       <img src="../../assets/images/hero-image.JPG" alt="Yu Ricky Image" />
     </div>
