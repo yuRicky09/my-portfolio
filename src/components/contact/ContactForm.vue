@@ -8,26 +8,20 @@
       </p>
     </div>
     <form @submit="onSubmit">
-      <BaseInputText :label="'Name'" :name="'name'">
+      <BaseInputText label="Name" name="name">
         <BotIcon />
       </BaseInputText>
-      <BaseInputText :label="'Email'" :name="'email'">
+      <BaseInputText label="Email" name="email" type="email">
         <MailIcon />
       </BaseInputText>
-      <BaseInputText
-        :label="'Message'"
-        :name="'message'"
-        :is-textarea-tag="true"
-      >
+      <BaseInputText label="Message" name="message" :is-textarea-tag="true">
         <MessageIcon />
       </BaseInputText>
-      <div class="relative text-center">
+      <div class="flex flex-col items-center gap-4 text-center">
         <button class="btn">Send Message</button>
-        <small
-          v-if="errorMessage"
-          class="absolute right-6 top-1/2 -translate-y-1/2 text-rose-500/90"
-          >{{ errorMessage }}</small
-        >
+        <small v-if="errorMessage" class="text-rose-500/90">{{
+          errorMessage
+        }}</small>
       </div>
     </form>
   </div>
@@ -58,6 +52,6 @@ const onSubmit = handleSubmit((value) => {
 }, onInvalidSubmit);
 
 function onInvalidSubmit() {
-  errorMessage.value = "表單送出失敗，請稍後再嘗試一次。";
+  errorMessage.value = "表單送出失敗，請確切填寫欄位後再嘗試一次。";
 }
 </script>

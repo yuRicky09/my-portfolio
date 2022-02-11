@@ -8,7 +8,7 @@
       <input
         v-if="!isTextareaTag"
         v-model="value"
-        type="text"
+        :type="type"
         class="peer border-2 dark:bg-zinc-900"
         :class="{
           'border-transparent': !meta.dirty && !meta.touched,
