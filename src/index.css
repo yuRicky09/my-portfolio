@@ -29,3 +29,19 @@
     @apply fill-current;
   }
 }
+
+@layer utilities {
+  .section {
+    @apply mb-5;
+  }
+
+  html.sr .load-hidden {
+    @apply invisible;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded bg-zinc-800 py-1 px-2 uppercase  text-white/90 shadow-[0_4px_0_0_#525252] transition-all  duration-300 hover:translate-y-[1px] hover:shadow-[0_3px_0_0_#525252]  active:translate-y-[4px] active:shadow-none  dark:bg-orange-50 dark:text-neutral-800 dark:shadow-[0_4px_0_0_#fff7eddd] dark:hover:shadow-[0_3px_0_0_#fff7eddd] dark:active:shadow-none;
+  }
+}

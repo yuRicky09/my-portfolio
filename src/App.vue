@@ -1,7 +1,7 @@
 <template>
   <TheNavigation :is-dark-mode="isDarkMode" />
-  <div>
-    <main>
+  <div class="pt-[66px]">
+    <main class="px-4">
       <router-view></router-view>
     </main>
   </div>
@@ -9,7 +9,6 @@
 
 <script setup>
 import TheNavigation from "@/components/TheNavigation.vue";
-
 const isDarkMode = checkThemeMode();
 
 function checkThemeMode() {

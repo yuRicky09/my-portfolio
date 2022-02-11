@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-light-bg/75 dark:bg-dark-bg/75 relative z-20 flex items-center justify-between py-3 px-2 backdrop-blur-sm"
+    class="fixed z-20 flex w-full items-center justify-between bg-orange-50/30 py-3 px-2 backdrop-blur-sm dark:bg-zinc-800"
   >
     <router-link
       class="inline-block font-['Comforter'] text-2xl font-bold"
@@ -17,7 +17,7 @@
       >
         <button v-if="isDarkMode" class="rounded-md bg-orange-400 p-2">
           <SunIcon
-            class="fill-[#292929]"
+            class="fill-neutral-800"
             @click="setThemeMode('light', 'dark')"
           />
         </button>
