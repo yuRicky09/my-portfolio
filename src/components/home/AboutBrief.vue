@@ -1,6 +1,6 @@
 <template>
-  <section class="section py-4">
-    <h2 class="mb-4">About</h2>
+  <section class="section">
+    <h2 class="section-title">About</h2>
     <div class="grid grid-cols-1 justify-items-center gap-4">
       <div>
         <img
@@ -24,14 +24,14 @@
           sit consequuntur ipsum aut praesentium voluptatem vel amet quos ullam
           aliquam doloremque nisi nihil vero explicabo facilis sunt!
         </p>
-        <ViewMore>
+        <SeeMoreLink>
           <router-link to="#" class="btn">See More</router-link>
-        </ViewMore>
+        </SeeMoreLink>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import ViewMore from "@/components/Home/ViewMore.vue";
+import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
 </script>

@@ -1,14 +1,18 @@
 <template>
   <TheNavigation :is-dark-mode="isDarkMode" />
-  <div class="pt-[66px]">
-    <main class="px-4 py-20">
+  <div class="pt-[66px]"></div>
+  <div class="px-4">
+    <main>
       <router-view></router-view>
     </main>
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
 import TheNavigation from "@/components/TheNavigation.vue";
+import TheFooter from "@/components/TheFooter.vue";
+
 const isDarkMode = checkThemeMode();
 
 function checkThemeMode() {

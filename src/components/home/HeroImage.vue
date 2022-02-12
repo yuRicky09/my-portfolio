@@ -4,20 +4,20 @@
       <img src="../../assets/images/hero-image.JPG" alt="Yu Ricky Image" />
     </div>
     <div>
-      <div class="mb-8">
+      <div>
         <p>Hi there,👋 I'm</p>
         <h1>Yu Ricky</h1>
         <p>Frontend Developer</p>
+        <SeeMoreLink>
+          <router-link to="#" class="btn">View Projects</router-link>
+        </SeeMoreLink>
       </div>
-      <ViewMore>
-        <router-link to="#" class="btn">View Projects</router-link>
-      </ViewMore>
     </div>
   </section>
 </template>
 
 <script setup>
-import ViewMore from "@/components/Home/ViewMore.vue";
+import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
 import { useScrollReveal } from "@/composables/useScrollReveal";
 
 useScrollReveal(".hero-image", {

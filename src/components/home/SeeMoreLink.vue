@@ -1,5 +1,5 @@
 <template>
-  <div class="my-2 flex items-center justify-center gap-2">
+  <div class="my-6 flex items-center justify-center gap-2">
     <HandRightIcon class="animate-shake" />
     <slot></slot>
   </div>

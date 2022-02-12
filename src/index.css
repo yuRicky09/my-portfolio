@@ -35,6 +35,10 @@
     @apply mb-28;
   }
 
+  .section-title {
+    @apply my-6;
+  }
+
   html.sr .load-hidden {
     @apply invisible;
   }

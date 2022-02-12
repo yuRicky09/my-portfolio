@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="mb-8 flex flex-col gap-4">
-      <h2>Contact Me</h2>
+    <div class="mb-8 flex flex-col">
+      <h2 class="section-title">Contact Me</h2>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi officia
         dolorem itaque.
