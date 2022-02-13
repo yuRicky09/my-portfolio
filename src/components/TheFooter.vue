@@ -1,19 +1,16 @@
 <template>
-  <footer class="grid place-items-center gap-4 py-10">
+  <footer
+    class="flex flex-col items-center justify-center gap-4 py-10 lg:flex-row"
+  >
     <div class="flex items-center gap-4">
+      <h3 class="font-[Comforter] font-bold">Yu Ricky</h3>
       <a
-        href="https://github.com/yuRicky09"
+        href="https://github.com/yuRicky09/my-portfolio"
         target="_blank"
-        class="hover:opacity-80"
+        class="flex items-center gap-2 hover:opacity-80"
       >
         <GithubIcon />
-      </a>
-      <a
-        href="https://www.frontendmentor.io/profile/yuRicky09"
-        target="_blank"
-        class="hover:opacity-80"
-      >
-        <FrontendMentorIcon />
+        <span>Source Code</span>
       </a>
     </div>
     <span>&#169; 2022 Yu Ricky. All Rights Reserved.</span>
@@ -22,5 +19,4 @@
 
 <script setup>
 import GithubIcon from "@/assets/images/svg/bxl-github.svg";
-import FrontendMentorIcon from "@/assets/images/svg/frontendmentor.svg";
 </script>

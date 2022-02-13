@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed z-20 flex w-full items-center justify-between bg-orange-50/30 py-3 px-2 dark:bg-zinc-800"
+    class="xs:px-6 fixed z-20 flex w-full items-center justify-between bg-orange-100/50 py-3 px-4 dark:bg-zinc-800/50 md:px-8 lg:px-12"
   >
     <router-link
       class="inline-block font-['Comforter'] text-2xl font-bold"
@@ -8,6 +8,23 @@
     >
       Yu Ricky
     </router-link>
+
+    <nav class="hidden md:block">
+      <ul class="flex items-center gap-10 text-xl">
+        <li>
+          <router-link to="#">Home</router-link>
+        </li>
+        <li>
+          <router-link to="#">About</router-link>
+        </li>
+        <li>
+          <router-link to="#">Projects</router-link>
+        </li>
+        <li>
+          <router-link to="#">Contact</router-link>
+        </li>
+      </ul>
+    </nav>
 
     <div class="flex gap-4">
       <Transition
@@ -38,14 +55,14 @@
       >
         <button
           v-if="isMenuOpen"
-          class="rounded-md border-[1px] border-current p-2"
+          class="rounded-md border-[1px] border-current p-2 md:hidden"
           @click="closeMenu"
         >
           <CloseIcon />
         </button>
         <button
           v-else
-          class="rounded-md border-[1px] border-current p-2"
+          class="rounded-md border-[1px] border-current p-2 md:hidden"
           @click="openMenu"
         >
           <MenuIcon />

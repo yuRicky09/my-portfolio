@@ -5,7 +5,7 @@
     <section class="section flex flex-col">
       <h2 class="section-title">Recent Project</h2>
       <ProjectList />
-      <SeeMoreLink>
+      <SeeMoreLink class="lg:self-end">
         <router-link to="#" class="btn">See More</router-link>
       </SeeMoreLink>
     </section>

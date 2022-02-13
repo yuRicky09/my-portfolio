@@ -1,12 +1,14 @@
 <template>
-  <section class="section">
+  <section id="about" class="section">
     <h2 class="section-title">About</h2>
-    <div class="grid grid-cols-1 justify-items-center gap-4">
+    <div
+      class="grid grid-cols-1 items-center justify-items-center gap-4 md:grid-cols-[40%_60%]"
+    >
       <div>
         <img
           src="../../assets/images/about-brief.jpg"
           alt="About Me Image"
-          class="w-36 object-cover"
+          class="xs:w-44 w-36 sm:w-56"
         />
       </div>
       <div class="flex flex-col gap-2">

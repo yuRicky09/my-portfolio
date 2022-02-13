@@ -1,7 +1,7 @@
 <template>
   <router-link
     to="#"
-    class="group relative flex flex-col items-center overflow-hidden bg-amber-100/90 dark:bg-zinc-900"
+    class="group relative flex flex-col items-center overflow-hidden bg-white/60 shadow-xl dark:bg-zinc-900"
   >
     <div class="overflow-hidden">
       <img
@@ -21,7 +21,7 @@
         class="absolute top-0 left-0 grid h-full w-full translate-y-full place-items-center bg-black/50 backdrop-blur-[2px] transition-transform group-hover:translate-y-0"
       >
         <div
-          class="flex items-center justify-center bg-amber-100 p-6 text-xl uppercase dark:bg-zinc-800"
+          class="flex items-center justify-center bg-orange-50 p-6 text-xl uppercase dark:bg-zinc-800"
         >
           <span>View Project</span>
           <RightArrowIcon />

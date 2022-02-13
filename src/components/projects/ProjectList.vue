@@ -1,5 +1,7 @@
 <template>
-  <div class="grid grid-cols-1 justify-items-center gap-14">
+  <div
+    class="grid grid-cols-1 justify-items-center gap-14 lg:grid-cols-2 lg:gap-7"
+  >
     <ProjectListItem />
     <ProjectListItem />
   </div>
