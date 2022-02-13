@@ -12,16 +12,15 @@
     <nav class="hidden md:block">
       <ul class="flex items-center gap-10 text-xl">
         <li>
-          <router-link to="#">Home</router-link>
+          <router-link to="#" class="router-link">About</router-link>
         </li>
         <li>
-          <router-link to="#">About</router-link>
+          <router-link to="#" class="router-link">Projects</router-link>
         </li>
         <li>
-          <router-link to="#">Projects</router-link>
-        </li>
-        <li>
-          <router-link to="#">Contact</router-link>
+          <router-link :to="{ name: 'Contact' }" class="router-link"
+            >Contact</router-link
+          >
         </li>
       </ul>
     </nav>
@@ -79,9 +78,6 @@
         class="absolute top-full left-0 w-full origin-top-right bg-slate-100 py-8 dark:bg-zinc-900"
       >
         <ul class="flex flex-col gap-5 text-center text-xl">
-          <li>
-            <router-link :to="{ name: 'Home' }">Home</router-link>
-          </li>
           <li>
             <router-link to="#">About</router-link>
           </li>

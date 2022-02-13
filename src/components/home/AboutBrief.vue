@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="section">
-    <h2 class="section-title">About</h2>
+    <SectionTitle title="About" class-name="about" />
     <div
       class="grid grid-cols-1 items-center justify-items-center gap-4 md:grid-cols-[40%_60%]"
     >
@@ -8,7 +8,7 @@
         <img
           src="../../assets/images/about-brief.jpg"
           alt="About Me Image"
-          class="xs:w-44 w-36 sm:w-56"
+          class="xs:w-44 w-36 sm:w-56 xl:w-64"
         />
       </div>
       <div class="flex flex-col gap-2">
@@ -36,4 +36,5 @@
 
 <script setup>
 import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
+import SectionTitle from "@/components/UI/SectionTitle.vue";
 </script>

@@ -35,10 +35,6 @@
     @apply mb-28;
   }
 
-  .section-title {
-    @apply my-6 lg:my-10;
-  }
-
   html.sr .load-hidden {
     @apply invisible;
   }
@@ -48,4 +44,12 @@
   .btn {
     @apply xs:py-2 xs:px-4 rounded bg-zinc-800 py-1  px-2 uppercase text-white/90  shadow-[0_4px_0_0_#525252] transition-all duration-300  hover:translate-y-[1px] hover:shadow-[0_3px_0_0_#525252]  active:translate-y-[4px] active:shadow-none dark:bg-orange-50 dark:text-neutral-800 dark:shadow-[0_4px_0_0_#fff7eddd] dark:hover:shadow-[0_3px_0_0_#fff7eddd] dark:active:shadow-none;
   }
+
+  .router-link {
+    @apply relative inline-block  before:absolute before:left-0 before:bottom-0 before:h-[3px] before:w-full  before:origin-right before:scale-x-0  before:bg-violet-500 before:transition-transform before:duration-200 hover:before:origin-left hover:before:translate-x-0  hover:before:scale-x-100;
+  }
+}
+
+.router-link-active {
+  @apply before:scale-100;
 }

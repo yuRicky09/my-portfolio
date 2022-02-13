@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mb-8 flex flex-col">
-      <h2 class="section-title">Contact Me</h2>
+      <SectionTitle title="Contact Me" class-name="contact" />
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi officia
         dolorem itaque.
@@ -32,6 +32,7 @@ import MailIcon from "@/assets/images/svg/bx-mail-send.svg";
 import BotIcon from "@/assets/images/svg/bxs-bot.svg";
 import MessageIcon from "@/assets/images/svg/bxs-message-dots.svg";
 import BaseInputText from "@/components/UI/BaseTextInput.vue";
+import SectionTitle from "@/components/UI/SectionTitle.vue";
 import { useForm } from "vee-validate";
 import { string as yupString, object as yupObject } from "yup";
 import { ref } from "vue";
