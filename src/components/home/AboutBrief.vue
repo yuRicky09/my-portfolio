@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="section">
-    <SectionTitle title="About" class-name="about" />
+    <BaseTitle title="About" class-name="about" />
     <div
       class="grid grid-cols-1 items-center justify-items-center gap-4 md:grid-cols-[40%_60%]"
     >
@@ -36,5 +36,5 @@
 
 <script setup>
 import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
-import SectionTitle from "@/components/UI/SectionTitle.vue";
+import BaseTitle from "@/components/UI/BaseTitle.vue";
 </script>

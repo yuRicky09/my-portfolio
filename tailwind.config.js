@@ -13,6 +13,9 @@ module.exports = {
       fontFamily: {
         body: ["Oswald", "Arial", "sans-serif"],
       },
+      gridTemplateColumns: {
+        tags: "repeat(auto-fit, minmax(min-content, 8rem) )",
+      },
       keyframes: {
         "fade-down": {
           "0%": { transform: "translateY(-10px)", opacity: "0" },

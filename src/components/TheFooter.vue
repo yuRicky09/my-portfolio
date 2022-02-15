@@ -18,5 +18,5 @@
 </template>
 
 <script setup>
-import GithubIcon from "@/assets/images/svg/bxl-github.svg";
+import GithubIcon from "@/assets/images/svg/github.svg";
 </script>

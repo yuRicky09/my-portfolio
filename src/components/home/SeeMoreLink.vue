@@ -6,5 +6,5 @@
 </template>
 
 <script setup>
-import HandRightIcon from "@/assets/images/svg/bxs-hand-right.svg";
+import HandRightIcon from "@/assets/images/svg/hand-right.svg";
 </script>

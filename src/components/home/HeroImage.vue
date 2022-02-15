@@ -13,7 +13,7 @@
       class="hero-image load-hidden xs:-mx-0 -mx-4 lg:col-span-1 lg:col-start-2 lg:row-start-1"
     >
       <img
-        src="../../assets/images/hero-image.JPG"
+        src="../../assets/images/hero-image.jpg"
         alt="Yu Ricky Image"
         class="h-full w-full object-cover object-center lg:h-[calc(100vh-66px)]"
       />
@@ -32,16 +32,16 @@
             <a
               href="https://github.com/yuRicky09"
               target="_blank"
-              class="hover:animate-flip"
+              class="group"
             >
-              <GithubIcon />
+              <GithubIcon class="group-hover:animate-flip" />
             </a>
             <a
               href="https://www.frontendmentor.io/profile/yuRicky09"
               target="_blank"
-              class="hover:animate-flip"
+              class="group"
             >
-              <FrontendMentorIcon />
+              <FrontendMentorIcon class="group-hover:animate-flip" />
             </a>
           </div>
         </div>
@@ -68,9 +68,9 @@
 <script setup>
 import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
 import { useScrollReveal } from "@/composables/useScrollReveal";
-import GithubIcon from "@/assets/images/svg/bxl-github.svg";
+import GithubIcon from "@/assets/images/svg/github.svg";
 import FrontendMentorIcon from "@/assets/images/svg/frontendmentor.svg";
-import MouseIcon from "@/assets/images/svg/bx-mouse.svg";
+import MouseIcon from "@/assets/images/svg/mouse.svg";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { onMounted, onBeforeUnmount, ref } from "vue";

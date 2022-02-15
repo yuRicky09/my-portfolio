@@ -1,20 +1,19 @@
 <template>
   <router-link
-    to="#"
+    :to="{ name: 'ProjectDetail', params: { projectName: project.name } }"
     class="group relative flex flex-col items-center overflow-hidden bg-white/60 shadow-xl dark:bg-zinc-900"
   >
     <div class="overflow-hidden">
       <img
-        src="../../assets/images/yustory.png"
+        :src="cover"
         alt="Yustory Project Cover"
         class="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
     </div>
     <div class="py-8 px-4 text-center">
-      <h3 class="mb-5 uppercase">Yustory</h3>
+      <h3 class="mb-5 uppercase">{{ project.name }}</h3>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita
-        itaque distinct.
+        {{ project.description }}
       </p>
 
       <div
@@ -32,5 +31,18 @@
 </template>
 
 <script setup>
-import RightArrowIcon from "@/assets/images/svg/bx-chevron-right.svg";
+import RightArrowIcon from "@/assets/images/svg/chevron-right.svg";
+
+const props = defineProps({
+  project: {
+    type: Object,
+    required: true,
+  },
+});
+
+function getProjectCoverUrl(name) {
+  return new URL(`../../assets/images/${name}.png`, import.meta.url).href;
+}
+
+const cover = getProjectCoverUrl(props.project.cover);
 </script>
