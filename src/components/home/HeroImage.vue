@@ -50,18 +50,27 @@
           Developer Frontend Developer
         </p>
         <SeeMoreLink class="lg:mt-20 lg:mb-0 lg:justify-start">
-          <router-link to="#" class="btn">View Projects</router-link>
+          <router-link :to="{ name: 'Projects' }" class="btn"
+            >View Projects</router-link
+          >
         </SeeMoreLink>
       </div>
     </div>
-
+    <!-- 
     <a
       href="#about"
       class="absolute bottom-2 left-0 hidden hover:opacity-80 lg:block"
     >
       <span class="writing-vertical-rl">Scroll Down</span>
       <MouseIcon />
-    </a>
+    </a> -->
+    <router-link
+      to="#about"
+      class="absolute bottom-2 left-0 hidden hover:opacity-80 lg:block"
+    >
+      <span class="writing-vertical-rl">Scroll Down</span>
+      <MouseIcon />
+    </router-link>
   </section>
 </template>
 

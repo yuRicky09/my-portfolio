@@ -9,6 +9,9 @@ module.exports = {
       xs: "540px",
       ...defaultTheme.screens,
     },
+    listStyleType: {
+      tool: "\\1F44D",
+    },
     extend: {
       fontFamily: {
         body: ["Oswald", "Arial", "sans-serif"],

@@ -13,7 +13,7 @@
     <div class="py-8 px-4 text-center">
       <h3 class="mb-5 uppercase">{{ project.name }}</h3>
       <p>
-        {{ project.description }}
+        {{ project.brief }}
       </p>
 
       <div
@@ -32,6 +32,7 @@
 
 <script setup>
 import RightArrowIcon from "@/assets/images/svg/chevron-right.svg";
+import { useGetImageUrl } from "@/composables/useGetImageUrl";
 
 const props = defineProps({
   project: {
@@ -40,9 +41,9 @@ const props = defineProps({
   },
 });
 
-function getProjectCoverUrl(name) {
-  return new URL(`../../assets/images/${name}.png`, import.meta.url).href;
-}
+// function getProjectCoverUrl(name) {
+//   return new URL(`../../assets/images/${name}.png`, import.meta.url).href;
+// }
 
-const cover = getProjectCoverUrl(props.project.cover);
+const cover = useGetImageUrl(props.project.cover);
 </script>
