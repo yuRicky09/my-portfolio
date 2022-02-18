@@ -9,9 +9,15 @@ module.exports = {
       xs: "540px",
       ...defaultTheme.screens,
     },
+    listStyleType: {
+      tool: "\\1F44D",
+    },
     extend: {
       fontFamily: {
         body: ["Oswald", "Arial", "sans-serif"],
+      },
+      gridTemplateColumns: {
+        tags: "repeat(auto-fit, minmax(min-content, 8rem) )",
       },
       keyframes: {
         "fade-down": {
@@ -46,6 +52,38 @@ module.exports = {
             transform: "rotateY(360deg)",
           },
         },
+        "right-to-left-in": {
+          "0%": {
+            transform: "translateX(100%)",
+          },
+          "100%": {
+            transform: "translateX(0px)",
+          },
+        },
+        "right-to-left-out": {
+          "0%": {
+            transform: "translateX(0px)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
+        },
+        "left-to-right-in": {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(0px)",
+          },
+        },
+        "left-to-right-out": {
+          "0%": {
+            transform: "translateX(0px)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         "fade-down": "fade-down 0.2s ease-in-out",
@@ -54,6 +92,10 @@ module.exports = {
         "pop-up-reverse": "pop-up 0.3s ease-out  reverse",
         shake: "shake 1s linear infinite",
         flip: "flip 0.4s linear 1",
+        "right-to-left-in": "right-to-left-in 0.3s ease-out",
+        "right-to-left-out": "right-to-left-out 0.3s ease-out",
+        "left-to-right-in": "left-to-right-in 0.3s ease-out",
+        "left-to-right-out": "left-to-right-out 0.3s ease-out",
       },
     },
   },

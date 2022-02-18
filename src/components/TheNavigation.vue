@@ -15,7 +15,9 @@
           <router-link to="#" class="router-link">About</router-link>
         </li>
         <li>
-          <router-link to="#" class="router-link">Projects</router-link>
+          <router-link :to="{ name: 'Projects' }" class="router-link"
+            >Projects</router-link
+          >
         </li>
         <li>
           <router-link :to="{ name: 'Contact' }" class="router-link"
@@ -75,17 +77,29 @@
     >
       <nav
         v-if="isMenuOpen"
-        class="absolute top-full left-0 w-full origin-top-right bg-slate-100 py-8 dark:bg-zinc-900"
+        class="absolute top-full left-0 w-full origin-top-right bg-slate-100 py-8 dark:bg-zinc-900 md:hidden"
       >
         <ul class="flex flex-col gap-5 text-center text-xl">
           <li>
-            <router-link to="#">About</router-link>
+            <router-link to="#" class="mobile-link" @click="closeMenu"
+              >About</router-link
+            >
           </li>
           <li>
-            <router-link to="#">Projects</router-link>
+            <router-link
+              :to="{ name: 'Projects' }"
+              class="mobile-link"
+              @click="closeMenu"
+              >Projects</router-link
+            >
           </li>
           <li>
-            <router-link to="#">Contact</router-link>
+            <router-link
+              :to="{ name: 'Contact' }"
+              class="mobile-link"
+              @click="closeMenu"
+              >Contact</router-link
+            >
           </li>
         </ul>
       </nav>
@@ -95,13 +109,15 @@
 </template>
 
 <script setup>
-import MoonIcon from "@/assets/images/svg/bxs-moon.svg";
-import SunIcon from "@/assets/images/svg/bxs-sun.svg";
-import CloseIcon from "@/assets/images/svg/bx-x.svg";
-import MenuIcon from "@/assets/images/svg/bx-menu.svg";
-import BaseOverlay from "@/components/UI/BaseOverlay.vue";
-import { ref } from "vue";
+import MoonIcon from "@/assets/images/svg/moon.svg";
+import SunIcon from "@/assets/images/svg/sun.svg";
+import CloseIcon from "@/assets/images/svg/x.svg";
+import MenuIcon from "@/assets/images/svg/menu.svg";
+import { ref, defineAsyncComponent } from "vue";
 
+const BaseOverlay = defineAsyncComponent(() =>
+  import("@/components/UI/BaseOverlay.vue")
+);
 const props = defineProps({
   isDarkMode: {
     type: Boolean,

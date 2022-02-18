@@ -1,12 +1,13 @@
 <template>
   <div>
-    <div class="mb-8 flex flex-col">
-      <SectionTitle title="Contact Me" class-name="contact" />
+    <div class="mb-8 flex flex-col gap-2">
+      <BaseTitle title="Contact Me" class-name="contact" class="!my-0" />
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi officia
         dolorem itaque.
       </p>
     </div>
+
     <form @submit="onSubmit">
       <BaseInputText label="Name" name="name">
         <BotIcon />
@@ -17,6 +18,7 @@
       <BaseInputText label="Message" name="message" :is-textarea-tag="true">
         <MessageIcon />
       </BaseInputText>
+
       <div class="flex flex-col items-center gap-4 text-center">
         <button class="btn">Send Message</button>
         <small v-if="errorMessage" class="text-rose-500/90">{{
@@ -28,11 +30,11 @@
 </template>
 
 <script setup>
-import MailIcon from "@/assets/images/svg/bx-mail-send.svg";
-import BotIcon from "@/assets/images/svg/bxs-bot.svg";
-import MessageIcon from "@/assets/images/svg/bxs-message-dots.svg";
+import MailIcon from "@/assets/images/svg/mail-send.svg";
+import BotIcon from "@/assets/images/svg/bot.svg";
+import MessageIcon from "@/assets/images/svg/message-dots.svg";
 import BaseInputText from "@/components/UI/BaseTextInput.vue";
-import SectionTitle from "@/components/UI/SectionTitle.vue";
+import BaseTitle from "@/components/UI/BaseTitle.vue";
 import { useForm } from "vee-validate";
 import { string as yupString, object as yupObject } from "yup";
 import { ref } from "vue";

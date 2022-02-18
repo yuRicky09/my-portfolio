@@ -7,7 +7,7 @@
     <div class="relative w-full">
       <input
         v-if="!isTextareaTag"
-        v-model="value"
+        v-model="inputValue"
         :type="type"
         class="peer border-2 dark:bg-zinc-900"
         :class="{
@@ -18,7 +18,7 @@
       />
       <textarea
         v-else
-        v-model="value"
+        v-model="inputValue"
         rows="3"
         class="peer resize-none border-2 dark:bg-zinc-900"
         :class="{
@@ -72,17 +72,21 @@ const props = defineProps({
   },
 });
 
-const { value, errorMessage, meta } = useField(props.name, undefined, {
+const {
+  value: inputValue,
+  errorMessage,
+  meta,
+} = useField(props.name, undefined, {
   initialValue: props.initialValue,
 });
 
 const labelPosition = computed(() => {
   if (props.isTextareaTag) {
-    return value.value
+    return inputValue.value
       ? "-top-5 text-[0.5rem]"
       : "top-3 peer-focus:-top-5 peer-focus:text-[0.5rem]";
   } else {
-    return value.value
+    return inputValue.value
       ? "-top-3 -translate-y-1/2 text-[0.5rem]"
       : "top-1/2 -translate-y-1/2 peer-focus:-top-3 peer-focus:text-[0.5rem]";
   }
