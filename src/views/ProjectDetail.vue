@@ -45,7 +45,7 @@
         </BulletedList>
       </div>
 
-      <div class="my-10 overflow-hidden rounded-sm">
+      <div class="project-cover load-hidden my-10 overflow-hidden rounded-sm">
         <img :src="cover" :alt="project.name" />
       </div>
     </section>
@@ -131,6 +131,7 @@ import { useSliderStore } from "@/stores/sliderStore";
 import { useLightBoxStore } from "@/stores/lightBoxStore";
 import { storeToRefs } from "pinia";
 import { defineAsyncComponent } from "vue";
+import { useScrollReveal } from "@/composables/useScrollReveal";
 
 const BaseOverlay = defineAsyncComponent(() =>
   import("@/components/UI/BaseOverlay.vue")
@@ -156,4 +157,12 @@ slideMaxIndex.value = project.images.length - 1;
 const lightBoxStore = useLightBoxStore();
 const { isZoomIn } = storeToRefs(lightBoxStore);
 const { zoomOutImg } = lightBoxStore;
+
+useScrollReveal(".project-cover", {
+  origin: "bottom",
+  distance: "50px",
+  duration: 600,
+  easing: "ease-out",
+  delay: 400,
+});
 </script>
