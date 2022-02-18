@@ -12,7 +12,9 @@
         ></ProjectListItem>
       </ProjectList>
       <SeeMoreLink class="lg:self-end">
-        <router-link to="#" class="btn">See More</router-link>
+        <router-link :to="{ name: 'Projects' }" class="btn"
+          >See More</router-link
+        >
       </SeeMoreLink>
     </section>
     <div>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="mb-8 flex flex-col">
-      <BaseTitle title="Contact Me" class-name="contact" />
+    <div class="mb-8 flex flex-col gap-2">
+      <BaseTitle title="Contact Me" class-name="contact" class="!my-0" />
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi officia
         dolorem itaque.

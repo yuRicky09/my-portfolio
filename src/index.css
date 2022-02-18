@@ -32,7 +32,7 @@
 
 @layer utilities {
   .section {
-    @apply mb-28;
+    @apply mb-24;
   }
 
   html.sr .load-hidden {

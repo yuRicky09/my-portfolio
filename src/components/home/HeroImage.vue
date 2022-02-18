@@ -18,6 +18,7 @@
         class="h-full w-full object-cover object-center lg:h-[calc(100vh-66px)]"
       />
     </div>
+
     <div class="intro-me load-hidden relative z-10">
       <div class="text-center lg:text-left xl:text-2xl">
         <div class="mb-4 flex flex-col gap-2 lg:mb-12">
@@ -56,14 +57,6 @@
         </SeeMoreLink>
       </div>
     </div>
-    <!-- 
-    <a
-      href="#about"
-      class="absolute bottom-2 left-0 hidden hover:opacity-80 lg:block"
-    >
-      <span class="writing-vertical-rl">Scroll Down</span>
-      <MouseIcon />
-    </a> -->
     <router-link
       to="#about"
       class="absolute bottom-2 left-0 hidden hover:opacity-80 lg:block"
@@ -87,16 +80,15 @@ import { onMounted, onBeforeUnmount, ref } from "vue";
 gsap.registerPlugin(TextPlugin);
 
 // Typing Animation
+// 只用於desktop, mobile下清除animation。
 const textEl = ref(null);
 const words = ["Welcome", "My Firend"];
-let cursorAnimation;
+let underscoreAnimation;
 let typingTimeline;
 
 function createTypingAnimation() {
-  clearPrevAnimation();
-
   if (isDeskTop()) {
-    cursorAnimation = gsap.from(".underscore", {
+    underscoreAnimation = gsap.from(".underscore", {
       duration: 1,
       autoAlpha: 0,
       repeat: -1,
@@ -122,7 +114,7 @@ function createTypingAnimation() {
 
 function clearPrevAnimation() {
   textEl.value.innerText = "";
-  cursorAnimation?.kill();
+  underscoreAnimation?.kill();
   typingTimeline?.kill();
 }
 
@@ -139,14 +131,20 @@ function setPositionParameter(index) {
   }
 }
 
+function clearPrevAndCreateNewAnimation() {
+  clearPrevAnimation();
+  createTypingAnimation();
+}
+
 onMounted(() => {
   createTypingAnimation();
-  window.addEventListener("resize", createTypingAnimation);
+  window.addEventListener("resize", clearPrevAndCreateNewAnimation);
 });
 
-onBeforeUnmount(() =>
-  window.removeEventListener("resize", createTypingAnimation)
-);
+onBeforeUnmount(() => {
+  clearPrevAnimation();
+  window.removeEventListener("resize", clearPrevAndCreateNewAnimation);
+});
 
 useScrollReveal(".hero-image", {
   duration: 700,

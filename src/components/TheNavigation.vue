@@ -113,9 +113,11 @@ import MoonIcon from "@/assets/images/svg/moon.svg";
 import SunIcon from "@/assets/images/svg/sun.svg";
 import CloseIcon from "@/assets/images/svg/x.svg";
 import MenuIcon from "@/assets/images/svg/menu.svg";
-import BaseOverlay from "@/components/UI/BaseOverlay.vue";
-import { ref } from "vue";
+import { ref, defineAsyncComponent } from "vue";
 
+const BaseOverlay = defineAsyncComponent(() =>
+  import("@/components/UI/BaseOverlay.vue")
+);
 const props = defineProps({
   isDarkMode: {
     type: Boolean,

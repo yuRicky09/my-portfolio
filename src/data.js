@@ -17,7 +17,14 @@ export const projects = [
       "收藏、點讚、留言功能",
       "RWD 響應式設計",
     ],
-    skills: ["Vuex", "Vue-Router", "vee-validate", "vue2-editor", "Firebase"],
+    skills: [
+      "Vue2 Option API",
+      "Vuex",
+      "Vue-Router",
+      "vee-validate",
+      "vue2-editor",
+      "Firebase",
+    ],
     problems: [
       "規劃功能時要想得更加全面，而不是想一步寫一步，這樣寫的組件會常常只能是當下的情況才能使用，而不是一個可複用率高的組件。",
       "變數與 class 命名要更加精準且有結構，發現自己有些變數名命名的太模糊，過一陣子再看也會忘記造成不易維護，class 名命之後想嘗試使用 BEM 命名方式。",
@@ -32,6 +39,7 @@ export const projects = [
       "學會如何使用Firebase來幫助完成專案後端部分。",
       "學會如何使用vee-validate等套件更加完善整個網站且加快開發速度，並且不只依賴套件也嘗試自己手刻分頁等常見功能組件。",
     ],
+    images: ["yustory", "designo", "234558"],
   },
   {
     name: "Yutify",

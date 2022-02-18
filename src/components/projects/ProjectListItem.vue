@@ -15,16 +15,16 @@
       <p>
         {{ project.brief }}
       </p>
+    </div>
 
+    <div
+      class="absolute top-0 left-0 grid h-full w-full translate-y-full place-items-center bg-black/50 backdrop-blur-[2px] transition-transform duration-1000 group-hover:translate-y-0 group-hover:duration-200"
+    >
       <div
-        class="absolute top-0 left-0 grid h-full w-full translate-y-full place-items-center bg-black/50 backdrop-blur-[2px] transition-transform duration-1000 group-hover:translate-y-0 group-hover:duration-200"
+        class="flex items-center justify-center bg-orange-50 p-6 text-xl uppercase dark:bg-zinc-800"
       >
-        <div
-          class="flex items-center justify-center bg-orange-50 p-6 text-xl uppercase dark:bg-zinc-800"
-        >
-          <span>View Project</span>
-          <RightArrowIcon />
-        </div>
+        <span>View Project</span>
+        <RightArrowIcon class="h-6 w-6" />
       </div>
     </div>
   </router-link>
@@ -40,10 +40,6 @@ const props = defineProps({
     required: true,
   },
 });
-
-// function getProjectCoverUrl(name) {
-//   return new URL(`../../assets/images/${name}.png`, import.meta.url).href;
-// }
 
 const cover = useGetImageUrl(props.project.cover);
 </script>
