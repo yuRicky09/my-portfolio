@@ -32,6 +32,14 @@ const routes = [
     component: () => import("@/views/ProjectDetail.vue"),
     props: true,
   },
+  {
+    path: "/about",
+    name: "About",
+    component: () => import("@/views/About.vue"),
+    meta: {
+      title: "About | Yu Ricky",
+    },
+  },
 ];
 
 const router = createRouter({

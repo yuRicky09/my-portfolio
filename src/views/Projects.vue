@@ -28,7 +28,7 @@
 import BaseTitle from "@/components/UI/BaseTitle.vue";
 import Vue from "@/assets/images/svg/vuejs.svg";
 import JavaScript from "@/assets/images/svg/javascript.svg";
-import Sass from "@/assets/images/svg/sass.svg";
+import SCSS from "@/assets/images/svg/sass.svg";
 import Tailwind from "@/assets/images/svg/tailwind-css.svg";
 import BaseTag from "@/components/UI/BaseTag.vue";
 import { projects } from "@/data";
@@ -40,7 +40,7 @@ import { useScrollReveal } from "@/composables/useScrollReveal";
 const tags = {
   Vue,
   JavaScript,
-  Sass,
+  SCSS,
   Tailwind,
 };
 const selectedTag = ref(null);

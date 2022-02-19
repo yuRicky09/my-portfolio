@@ -27,7 +27,9 @@
           aliquam doloremque nisi nihil vero explicabo facilis sunt!
         </p>
         <SeeMoreLink>
-          <router-link to="#" class="btn">See More</router-link>
+          <router-link :to="{ name: 'About' }" class="btn"
+            >See More</router-link
+          >
         </SeeMoreLink>
       </div>
     </div>
