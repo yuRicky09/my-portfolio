@@ -12,7 +12,9 @@
     <nav class="hidden md:block">
       <ul class="flex items-center gap-10 text-xl">
         <li>
-          <router-link to="#" class="router-link">About</router-link>
+          <router-link :to="{ name: 'About' }" class="router-link"
+            >About</router-link
+          >
         </li>
         <li>
           <router-link :to="{ name: 'Projects' }" class="router-link"
@@ -59,7 +61,7 @@
           class="rounded-md border-[1px] border-current p-2 md:hidden"
           @click="closeMenu"
         >
-          <CloseIcon />
+          <CloseIcon class="h-6 w-6" />
         </button>
         <button
           v-else
@@ -81,7 +83,10 @@
       >
         <ul class="flex flex-col gap-5 text-center text-xl">
           <li>
-            <router-link to="#" class="mobile-link" @click="closeMenu"
+            <router-link
+              :to="{ name: 'About' }"
+              class="mobile-link"
+              @click="closeMenu"
               >About</router-link
             >
           </li>

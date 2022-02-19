@@ -36,7 +36,7 @@ const trigger = ref(null);
 
 onMounted(() => {
   const titleFadeInAnimation = gsap.from(`.${props.className}`, {
-    duration: 0.5,
+    duration: 0.4,
     x: -20,
     stagger: 0.1,
     autoAlpha: 0,
@@ -44,7 +44,7 @@ onMounted(() => {
   });
 
   scrollTrigger = ScrollTrigger.create({
-    start: "top 75%",
+    start: "top 80%",
     trigger: trigger.value,
     toggleActions: "restart none none reverse",
     animation: titleFadeInAnimation,

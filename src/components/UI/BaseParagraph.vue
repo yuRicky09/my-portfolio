@@ -1,5 +1,5 @@
 <template>
-  <p class="my-5 px-2">
+  <p class="my-5">
     {{ textContent }}
   </p>
 </template>
