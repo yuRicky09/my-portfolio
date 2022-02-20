@@ -13,7 +13,7 @@
       class="hero-image load-hidden xs:-mx-0 -mx-4 lg:col-span-1 lg:col-start-2 lg:row-start-1"
     >
       <img
-        src="../../assets/images/hero-image.jpg"
+        src="@/assets/images/hero-image.jpg"
         alt="Yu Ricky Image"
         class="h-full w-full object-cover object-center lg:h-[calc(100vh-66px)]"
       />

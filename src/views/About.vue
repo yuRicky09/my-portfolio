@@ -8,7 +8,7 @@
         <div class="h-[20rem] xl:h-[25rem]">
           <img
             ref="aboutCover"
-            src="../assets/images/about-cover.jpg"
+            src="@/assets/images/about-cover.jpg"
             alt="about cover"
             class="h-full w-full object-cover"
           />
@@ -77,19 +77,19 @@
         <div class="relative h-72 w-full overflow-hidden sm:h-80 md:h-96">
           <img
             ref="img1"
-            src="../assets/images/about-1.jpg"
+            src="@/assets/images/about-1.jpg"
             alt="me"
             class="absolute top-0 left-0 h-full w-full object-cover"
           />
           <img
             ref="img2"
-            src="../assets/images/about-2.jpg"
+            src="@/assets/images/about-2.jpg"
             alt="me"
             class="absolute top-0 left-0 h-full w-full object-cover"
           />
           <img
             ref="img3"
-            src="../assets/images/about-3.jpg"
+            src="@/assets/images/about-3.jpg"
             alt="me"
             class="absolute top-0 left-0 h-full w-full object-cover"
           />
