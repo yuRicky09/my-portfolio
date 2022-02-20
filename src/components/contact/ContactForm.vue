@@ -8,7 +8,14 @@
       </p>
     </div>
 
-    <form @submit="onSubmit">
+    <form
+      name="contact-me"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      @submit="onSubmit"
+    >
+      <input type="hidden" name="form-name" value="contact-me" />
       <BaseInputText label="Name" name="name">
         <BotIcon />
       </BaseInputText>
