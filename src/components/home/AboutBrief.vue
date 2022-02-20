@@ -6,7 +6,7 @@
     >
       <div>
         <img
-          :src="aboutBriefImg"
+          src="../../assets/images/about-brief.jpg"
           alt="About Me Image"
           class="xs:w-44 w-36 sm:w-56 xl:w-64"
         />
@@ -37,7 +37,6 @@
 </template>
 
 <script setup>
-import aboutBriefImg from "@/assets/images/about-brief.jpg";
 import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
 import BaseTitle from "@/components/UI/BaseTitle.vue";
 </script>

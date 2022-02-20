@@ -8,7 +8,7 @@
         <div class="h-[20rem] xl:h-[25rem]">
           <img
             ref="aboutCover"
-            :src="aboutCoverImg"
+            src="../assets/images/about-cover.jpg"
             alt="about cover"
             class="h-full w-full object-cover"
           />
@@ -77,19 +77,19 @@
         <div class="relative h-72 w-full overflow-hidden sm:h-80 md:h-96">
           <img
             ref="img1"
-            :src="aboutImgOne"
+            src="../assets/images/about-1.jpg"
             alt="me"
             class="absolute top-0 left-0 h-full w-full object-cover"
           />
           <img
             ref="img2"
-            :src="aboutImgTwo"
+            src="../assets/images/about-2.jpg"
             alt="me"
             class="absolute top-0 left-0 h-full w-full object-cover"
           />
           <img
             ref="img3"
-            :src="aboutImgThree"
+            src="../assets/images/about-3.jpg"
             alt="me"
             class="absolute top-0 left-0 h-full w-full object-cover"
           />
@@ -100,10 +100,6 @@
 </template>
 
 <script setup>
-import aboutCoverImg from "@/assets/images/about-cover.jpg";
-import aboutImgOne from "@/assets/images/about-1.jpg";
-import aboutImgTwo from "@/assets/images/about-2.jpg";
-import aboutImgThree from "@/assets/images/about-3.jpg";
 import BaseTitle from "@/components/UI/BaseTitle.vue";
 import BaseParagraph from "@/components/UI/BaseParagraph.vue";
 import BaseTag from "@/components/UI/BaseTag.vue";
