@@ -56,12 +56,30 @@ const schema = yupObject({
 const { handleSubmit } = useForm({
   validationSchema: schema,
 });
-const onSubmit = handleSubmit((value) => {
+const onSubmit = handleSubmit(async (value) => {
   errorMessage.value = null;
   console.log(value);
+  await fetch("./", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: encode({
+      "form-name": "contact-me",
+      ...value,
+    }),
+  });
+
+  console.log("表單成功送出");
 }, onInvalidSubmit);
 
 function onInvalidSubmit() {
   errorMessage.value = "表單送出失敗，請確切填寫欄位後再嘗試一次。";
+}
+
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
 }
 </script>

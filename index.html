@@ -9,6 +9,11 @@
   <body
     class="font-body bg-orange-100/80 text-neutral-800 transition-colors duration-300 dark:bg-zinc-800 dark:text-white/90"
   >
+    <form name="contact-me" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
