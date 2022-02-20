@@ -13,7 +13,7 @@
       class="hero-image load-hidden xs:-mx-0 -mx-4 lg:col-span-1 lg:col-start-2 lg:row-start-1"
     >
       <img
-        src="@/assets/images/hero-image.jpg"
+        :src="heroImage"
         alt="Yu Ricky Image"
         class="h-full w-full object-cover object-center lg:h-[calc(100vh-66px)]"
       />
@@ -68,6 +68,7 @@
 </template>
 
 <script setup>
+import heroImage from "@/assets/images/hero-image.jpg";
 import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
 import { useScrollReveal } from "@/composables/useScrollReveal";
 import GithubIcon from "@/assets/images/svg/github.svg";
