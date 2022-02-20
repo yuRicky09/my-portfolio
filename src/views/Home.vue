@@ -17,8 +17,12 @@
         >
       </SeeMoreLink>
     </section>
-    <div>
+    <div
+      id="contact"
+      class="grid grid-cols-1 gap-10 lg:px-28 xl:grid-cols-[1fr_40%] xl:px-0"
+    >
       <ContactForm />
+      <GoogleMap class="xl:!h-full" />
     </div>
   </div>
 </template>
@@ -33,6 +37,7 @@ import BaseTitle from "@/components/UI/BaseTitle.vue";
 import ProjectListItem from "@/components/projects/ProjectListItem.vue";
 import { projects } from "@/data";
 import { computed } from "vue";
+import GoogleMap from "@/components/contact/GoogleMap.vue";
 
 const recentProjects = computed(() => projects.slice(-2));
 </script>

@@ -119,19 +119,16 @@ import SunIcon from "@/assets/images/svg/sun.svg";
 import CloseIcon from "@/assets/images/svg/x.svg";
 import MenuIcon from "@/assets/images/svg/menu.svg";
 import { ref, defineAsyncComponent } from "vue";
+import { useThemeModeStore } from "@/stores/themeModeStore";
+import { storeToRefs } from "pinia";
 
 const BaseOverlay = defineAsyncComponent(() =>
   import("@/components/UI/BaseOverlay.vue")
 );
-const props = defineProps({
-  isDarkMode: {
-    type: Boolean,
-    required: true,
-  },
-});
 
-const isDarkMode = ref(props.isDarkMode);
 const isMenuOpen = ref(false);
+const themeModeStore = useThemeModeStore();
+const { isDarkMode } = storeToRefs(themeModeStore);
 
 function setThemeMode(selectedMode, currentMode) {
   localStorage.setItem("theme", selectedMode);
