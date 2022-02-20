@@ -7,6 +7,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.4",
+    "default-passive-events": "^2.0.0",
     "gsap": "^3.9.1",
     "pinia": "^2.0.11",
     "prettier-plugin-tailwindcss": "^0.1.6",
