@@ -10,16 +10,6 @@ export const useSliderStore = defineStore("slider", () => {
   const AUTOPLAYTIME = 5000;
   const lgihtBoxStore = useLightBoxStore();
 
-  function autoPlay() {
-    if (lgihtBoxStore.isZoomIn) return;
-
-    timer = setInterval(nextSlide, AUTOPLAYTIME);
-  }
-
-  function stopAutoPlay() {
-    clearInterval(timer);
-  }
-
   const slideAnimation = computed(() => {
     const enterActiveClass =
       animationMode.value === "right-to-left"
@@ -53,6 +43,8 @@ export const useSliderStore = defineStore("slider", () => {
   }
 
   function setSlideTo(thumbnailIndex) {
+    resetAutoPlay();
+
     if (thumbnailIndex === currentSlideIndex.value) return;
 
     thumbnailIndex > currentSlideIndex.value
@@ -60,6 +52,23 @@ export const useSliderStore = defineStore("slider", () => {
       : (animationMode.value = "left-to-right");
 
     currentSlideIndex.value = thumbnailIndex;
+  }
+
+  function autoPlay() {
+    if (lgihtBoxStore.isZoomIn) return;
+
+    timer = setInterval(nextSlide, AUTOPLAYTIME);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(timer);
+  }
+
+  function resetAutoPlay() {
+    if (timer) {
+      stopAutoPlay(timer);
+      autoPlay();
+    }
   }
 
   return {
