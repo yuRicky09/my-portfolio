@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
+import { projects } from "@/data";
 
 const routes = [
   {
@@ -31,6 +32,16 @@ const routes = [
     name: "ProjectDetail",
     component: () => import("@/views/ProjectDetail.vue"),
     props: true,
+    beforeEnter: (to) => {
+      const projectName = to.params.projectName;
+      const isExist = projects.some((project) => project.name === projectName);
+
+      if (!isExist)
+        return {
+          name: "NotFound",
+          params: { pathMatch: to.path.slice(1).split("/") },
+        };
+    },
   },
   {
     path: "/about",
@@ -38,6 +49,14 @@ const routes = [
     component: () => import("@/views/About.vue"),
     meta: {
       title: "About | Yu Ricky",
+    },
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("@/views/NotFound.vue"),
+    meta: {
+      title: "Not Found 404 | Yu Ricky",
     },
   },
 ];

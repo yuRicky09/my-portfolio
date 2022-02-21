@@ -3,7 +3,7 @@
     class="xs:px-6 fixed z-20 flex w-full items-center justify-between bg-orange-100/50 py-3 px-4 dark:bg-zinc-800/50 md:px-8 lg:px-12"
   >
     <router-link
-      class="inline-block font-['Comforter'] text-2xl font-bold"
+      class="inline-block whitespace-nowrap font-['Comforter'] text-2xl font-bold"
       :to="{ name: 'Home' }"
     >
       Yu Ricky

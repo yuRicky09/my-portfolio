@@ -33,19 +33,41 @@
         }}</small>
       </div>
     </form>
+    <Teleport to="body">
+      <BaseOverlay v-if="isModalOpen" class="z-30" @click.self="closeModal">
+        <div
+          class="relative flex flex-col items-center rounded-lg bg-orange-50 py-5 px-5 dark:bg-zinc-900 md:px-20"
+        >
+          <p class="my-24 text-center text-xl font-bold">
+            非常感謝您的來信，站主確認完畢後將會立即回覆您。
+          </p>
+          <button class="btn font-bold" @click="closeModal">確認</button>
+          <CloseIcon
+            class="absolute top-1 right-1 h-12 w-12 cursor-pointer hover:opacity-80"
+            @click="closeModal"
+          />
+        </div>
+      </BaseOverlay>
+    </Teleport>
   </div>
 </template>
 
 <script setup>
 import MailIcon from "@/assets/images/svg/mail-send.svg";
 import BotIcon from "@/assets/images/svg/bot.svg";
+import CloseIcon from "@/assets/images/svg/x.svg";
 import MessageIcon from "@/assets/images/svg/message-dots.svg";
 import BaseInputText from "@/components/UI/BaseTextInput.vue";
 import BaseTitle from "@/components/UI/BaseTitle.vue";
 import { useForm } from "vee-validate";
 import { string as yupString, object as yupObject } from "yup";
-import { ref } from "vue";
+import { ref, defineAsyncComponent } from "vue";
 
+const BaseOverlay = defineAsyncComponent(() =>
+  import("@/components/UI/BaseOverlay.vue")
+);
+
+const isModalOpen = ref(false);
 const errorMessage = ref(null);
 const schema = yupObject({
   email: yupString().required("請輸入信箱").email("信箱格式錯誤"),
@@ -53,12 +75,12 @@ const schema = yupObject({
   message: yupString().required("請輸入訊息"),
 });
 
-const { handleSubmit } = useForm({
+const { handleSubmit, resetForm } = useForm({
   validationSchema: schema,
 });
 const onSubmit = handleSubmit(async (value) => {
   errorMessage.value = null;
-  console.log(value);
+
   await fetch("./", {
     method: "post",
     headers: {
@@ -70,7 +92,8 @@ const onSubmit = handleSubmit(async (value) => {
     }),
   });
 
-  console.log("表單成功送出");
+  resetForm();
+  isModalOpen.value = true;
 }, onInvalidSubmit);
 
 function onInvalidSubmit() {
@@ -81,5 +104,9 @@ function encode(data) {
   return Object.keys(data)
     .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join("&");
+}
+
+function closeModal() {
+  isModalOpen.value = false;
 }
 </script>

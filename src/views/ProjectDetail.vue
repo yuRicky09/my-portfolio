@@ -29,7 +29,7 @@
         <p>{{ project.description }}</p>
       </div>
 
-      <div class="hidden md:flex md:gap-10">
+      <div class="hidden md:flex md:gap-10 lg:gap-20 xl:gap-28">
         <BulletedList list-title="Features">
           <BulletedListItem
             :items="project.features"

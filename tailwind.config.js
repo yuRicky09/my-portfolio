@@ -13,6 +13,9 @@ module.exports = {
       listStyleType: {
         tool: "\\1F44D",
       },
+      screens: {
+        "hover-desktop": { raw: "(hover: hover)" },
+      },
       fontFamily: {
         body: ["Oswald", "Arial", "sans-serif"],
       },
