@@ -5,8 +5,8 @@
     <div
       class="absolute top-12 left-0 z-50 hidden font-['Press_Start_2P'] text-violet-500 lg:block"
     >
-      <span ref="textEl" class="text text-3xl"></span>
-      <span class="underscore text-3xl font-bold">_</span>
+      <span ref="textEl" class="text-3xl"></span>
+      <span ref="underscoreEl" class="invisible text-3xl font-bold">_</span>
     </div>
 
     <div
@@ -82,40 +82,41 @@ gsap.registerPlugin(TextPlugin);
 // Typing Animation
 // 只用於desktop, mobile下清除animation。
 const textEl = ref(null);
+const underscoreEl = ref(null);
 const words = ["Welcome", "My Firend"];
 let underscoreAnimation;
 let typingTimeline;
 
 function createTypingAnimation() {
-  if (isDeskTop()) {
-    underscoreAnimation = gsap.from(".underscore", {
-      duration: 1,
+  if (!isDeskTop()) return;
+
+  underscoreAnimation = gsap.fromTo(
+    underscoreEl.value,
+    {
       autoAlpha: 0,
+    },
+    {
+      duration: 1,
       repeat: -1,
+      autoAlpha: 1,
       ease: "power3.inOut",
-    });
+    }
+  );
 
-    typingTimeline = gsap.timeline({
-      repeat: -1,
-    });
+  typingTimeline = gsap.timeline({
+    repeat: -1,
+  });
 
-    words.forEach((word, index) => {
-      const timeline = gsap.to(".text", {
-        duration: 2,
-        text: word,
-        repeat: 1,
-        yoyo: true,
-        repeatDelay: 1,
-      });
-      typingTimeline.add(timeline, setPositionParameter(index));
+  words.forEach((word, index) => {
+    const typingTween = gsap.to(textEl.value, {
+      duration: 2,
+      text: word,
+      repeat: 1,
+      yoyo: true,
+      repeatDelay: 1,
     });
-  }
-}
-
-function clearPrevAnimation() {
-  textEl.value.innerText = "";
-  underscoreAnimation?.kill();
-  typingTimeline?.kill();
+    typingTimeline.add(typingTween, setPositionParameter(index));
+  });
 }
 
 function isDeskTop() {
@@ -129,6 +130,12 @@ function setPositionParameter(index) {
   } else {
     return "+=1.5";
   }
+}
+
+function clearPrevAnimation() {
+  textEl.value.innerText = "";
+  underscoreAnimation?.kill();
+  typingTimeline?.kill();
 }
 
 function clearPrevAndCreateNewAnimation() {
