@@ -33,6 +33,7 @@
         }}</small>
       </div>
     </form>
+
     <Teleport to="body">
       <BaseOverlay v-if="isModalOpen" class="z-30" @click.self="closeModal">
         <div

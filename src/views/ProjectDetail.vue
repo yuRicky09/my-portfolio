@@ -111,6 +111,17 @@
         />
       </div>
     </section>
+
+    <section class="section">
+      <BaseTitle title="Full Page" class-name="fullpage" />
+      <div class="mx-auto w-4/5">
+        <img
+          :src="fullpage"
+          alt="Project full page"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -149,6 +160,7 @@ const props = defineProps({
 
 const project = projects.find((project) => project.name === props.projectName);
 const cover = useGetImageUrl(project.cover);
+const fullpage = useGetImageUrl(project.fullpage);
 
 const sliderStore = useSliderStore();
 const { currentSlideIndex, slideMaxIndex } = storeToRefs(sliderStore);

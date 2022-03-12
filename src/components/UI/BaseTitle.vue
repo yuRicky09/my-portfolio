@@ -4,7 +4,7 @@
       v-for="(character, index) in characters"
       :key="index"
       class="invisible inline-block"
-      :class="[className]"
+      :class="className"
     >
       {{ character === " " ? "&nbsp;" : character }}
     </span>

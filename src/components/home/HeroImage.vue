@@ -10,12 +10,19 @@
     </div>
 
     <div
-      class="hero-image load-hidden xs:-mx-0 -mx-4 lg:col-span-1 lg:col-start-2 lg:row-start-1"
+      class="hero-image load-hidden xs:-mx-0 relative -mx-4 lg:col-span-1 lg:col-start-2 lg:row-start-1"
     >
+      <div
+        class="absolute top-10 left-2 hidden h-10 w-10 border-t-8 border-l-8 border-violet-500 bg-transparent lg:block"
+      ></div>
+      <div
+        class="absolute right-2 bottom-10 hidden h-10 w-10 border-b-8 border-r-8 border-violet-500 bg-transparent lg:block"
+      ></div>
+      <div></div>
       <img
-        src="../../assets/images/hero-cover.jpg"
+        src="../../assets/images/hero-cover.jpeg"
         alt="Yu Ricky Image"
-        class="h-full w-full object-cover object-center lg:h-[calc(100vh-66px)]"
+        class="h-full w-full scale-[0.85] object-cover object-center lg:h-[calc(100vh-66px)]"
       />
     </div>
 

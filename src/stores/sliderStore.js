@@ -27,19 +27,19 @@ export const useSliderStore = defineStore("slider", () => {
   });
 
   function nextSlide() {
+    animationMode.value = "right-to-left";
+
     currentSlideIndex.value === slideMaxIndex.value
       ? (currentSlideIndex.value = 0)
       : currentSlideIndex.value++;
-
-    animationMode.value = "right-to-left";
   }
 
   function prevSlide() {
+    animationMode.value = "left-to-right";
+
     currentSlideIndex.value === 0
       ? (currentSlideIndex.value = slideMaxIndex.value)
       : currentSlideIndex.value--;
-
-    animationMode.value = "left-to-right";
   }
 
   function setSlideTo(thumbnailIndex) {
