@@ -53,10 +53,19 @@
             </a>
           </div>
         </div>
-        <p>
-          Frontend Developer Frontend Developer Frontend Developer Frontend
-          Developer Frontend Developer
-        </p>
+        <div class="my-8 space-y-2 text-left text-sm md:text-base xl:text-lg">
+          <p>
+            畢業後便前往日本就職，在日期間為了擴展自己的視野也多次輾轉各地，熱愛挑戰的我如今又踏上了一個全新的領域
+            <span
+              class="underline decoration-violet-500 decoration-2 underline-offset-2"
+            >
+              前端工程師 </span
+            >。
+          </p>
+          <p>
+            目前致力於使用Vue與TailwindCSS開發個人專案，希望能透過此網站，讓您能更快速地認識我的經歷與使用技術。
+          </p>
+        </div>
         <SeeMoreLink class="lg:mt-20 lg:mb-0 lg:justify-start">
           <router-link :to="{ name: 'Projects' }" class="btn"
             >View Projects</router-link
@@ -90,7 +99,12 @@ gsap.registerPlugin(TextPlugin);
 // 只用於desktop, mobile下清除animation。
 const textEl = ref(null);
 const underscoreEl = ref(null);
-const words = ["Welcome", "My Firend"];
+const words = [
+  "From 'a i u e o'",
+  "To 'Hello World'",
+  "Not easy...",
+  "But worth it!!!",
+];
 let underscoreAnimation;
 let typingTimeline;
 
@@ -128,7 +142,7 @@ function createTypingAnimation() {
 
 function isDeskTop() {
   const innerWidth = window.innerWidth;
-  return innerWidth > 1024;
+  return innerWidth >= 1280;
 }
 
 function setPositionParameter(index) {

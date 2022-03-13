@@ -17,7 +17,7 @@ module.exports = {
         "hover-desktop": { raw: "(hover: hover)" },
       },
       fontFamily: {
-        body: ["Oswald", "Arial", "sans-serif"],
+        body: ["Oswald", "Arial", "Shippori Antique B1", "sans-serif"],
       },
       gridTemplateColumns: {
         tags: "repeat(auto-fit, minmax(min-content, 8rem) )",

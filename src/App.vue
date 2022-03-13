@@ -7,12 +7,14 @@
     </main>
     <TheFooter />
   </div>
+  <BackToTopBtn />
 </template>
 
 <script setup>
 import TheNavigation from "@/components/TheNavigation.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import { useThemeModeStore } from "@/stores/themeModeStore";
+import BackToTopBtn from "@/components/UI/BackToTopBtn.vue";
 
 const themeModeStore = useThemeModeStore();
 themeModeStore.setThemeMode();

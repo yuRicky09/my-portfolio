@@ -12,19 +12,11 @@
         />
       </div>
       <div class="flex flex-col gap-2">
+        <p>2017年畢業於東吳大學日文系</p>
+        <p>2018-2021年期間於日本熊本、廣島、兵庫、東京等各地工作</p>
         <p>
-          Lorem ipsum dolor sit voluptatibus suscipit et, autem ad, adipisci
-          odit dolor inventore
-        </p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus,
-          eligendi. Repudiandae enim eos nostrum quisquam adipisci illum natus
-          fuga amet tenetur voluptate laudantium vel ducimus asperiores eligendi
-          dolorem, facilis ullam.
-        </p>
-        <p>
-          sit consequuntur ipsum aut praesentium voluptatem vel amet quos ullam
-          aliquam doloremque nisi nihil vero explicabo facilis sunt!
+          於2021下半年趟上網路開發旅程，目前除了學習HTML、CSS、JavaScript外，也持續專精前端框架Vue與Tailwind
+          CSS等各項技術，使自己能開發出讓使用者於各種裝置下都有絕佳體驗的網頁應用程式。
         </p>
         <SeeMoreLink>
           <router-link :to="{ name: 'About' }" class="btn"

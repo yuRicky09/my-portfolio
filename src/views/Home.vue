@@ -39,5 +39,5 @@ import { projects } from "@/data";
 import { computed } from "vue";
 import GoogleMap from "@/components/contact/GoogleMap.vue";
 
-const recentProjects = computed(() => projects.slice(-2));
+const recentProjects = computed(() => projects.slice(0, 2));
 </script>

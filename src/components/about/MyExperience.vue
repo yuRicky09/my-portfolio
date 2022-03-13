@@ -11,28 +11,23 @@
       ></div>
     </div>
 
-    <div ref="experience" class="flex flex-col gap-2 py-8">
-      <h3 class="mb-3 font-bold">2019/6 九州熊本</h3>
-      <p class="font-bold">職位: 飯店櫃檯</p>
+    <div ref="experienceEl" class="flex flex-col gap-2 py-8">
+      <h3 class="mb-3 font-bold">
+        {{ experience.time }} {{ experience.place }}
+      </h3>
+      <p class="font-bold">公司: {{ experience.company }}</p>
+      <p class="font-bold">職位: {{ experience.position }}</p>
       <h4 class="font-bold">工作內容</h4>
       <ul class="list-inside list-disc">
-        <li>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione vero
-          alias
-        </li>
-        <li>
-          dignissimos tempore neque, molestiae blanditiis laboriosam ad est
-          beatae, debitis, obcaecati praesentium quisquam excepturi sit
-          accusantium et soluta cum.
+        <li v-for="desc in experience.jobDescription" :key="desc">
+          {{ desc }}
         </li>
       </ul>
       <h4 class="font-bold">特殊成就</h4>
       <ul class="list-inside list-disc">
-        <li>
-          dignissimos tempore neque, molestiae blanditiis laboriosam ad est
-          beatae, debitis, obcaecati
+        <li v-for="achievement in experience.achievements" :key="achievement">
+          {{ achievement }}
         </li>
-        <li>praesentium quisquam excepturi sit accusantium et soluta cum.</li>
       </ul>
     </div>
   </div>
@@ -43,12 +38,19 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
+defineProps({
+  experience: {
+    type: Object,
+    required: true,
+  },
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 const container = ref(null);
 const bar = ref(null);
 const dot = ref(null);
-const experience = ref(null);
+const experienceEl = ref(null);
 let scrollTrigger;
 
 onMounted(() => {
@@ -73,7 +75,7 @@ onMounted(() => {
       "-=0.2"
     )
     .from(
-      experience.value,
+      experienceEl.value,
       {
         duration: 1,
         translateY: -10,
