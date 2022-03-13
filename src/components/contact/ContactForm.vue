@@ -8,14 +8,7 @@
       </p>
     </div>
 
-    <form
-      name="contact-me"
-      method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      @submit="onSubmit"
-    >
-      <input type="hidden" name="form-name" value="contact-me" />
+    <form enctype="multipart/form-data" method="post" @submit="onSubmit">
       <BaseInputText label="Name" name="name">
         <BotIcon />
       </BaseInputText>
@@ -27,7 +20,7 @@
       </BaseInputText>
 
       <div class="flex flex-col items-center gap-4 text-center">
-        <button class="btn">Send Message</button>
+        <button class="btn" :disabled="isSubmitting">Send Message</button>
         <small v-if="errorMessage" class="text-rose-500/90">{{
           errorMessage
         }}</small>
@@ -35,12 +28,13 @@
     </form>
 
     <Teleport to="body">
-      <BaseOverlay v-if="isModalOpen" class="z-30" @click.self="closeModal">
+      <BaseSpinner v-if="isLoading" />
+      <BaseOverlay v-if="isModalOpen" class="!z-30" @click.self="closeModal">
         <div
           class="relative flex flex-col items-center rounded-lg bg-orange-50 py-5 px-5 dark:bg-zinc-900 md:px-20"
         >
           <p class="my-24 text-center text-xl font-bold">
-            非常感謝您的來信，站主確認完畢後將會立即回覆您。
+            {{ modalMessage }}
           </p>
           <button class="btn font-bold" @click="closeModal">確認</button>
           <CloseIcon
@@ -68,43 +62,54 @@ const BaseOverlay = defineAsyncComponent(() =>
   import("@/components/UI/BaseOverlay.vue")
 );
 
+const BaseSpinner = defineAsyncComponent(() =>
+  import("@/components/UI/BaseSpinner.vue")
+);
+
 const isModalOpen = ref(false);
+const isLoading = ref(false);
 const errorMessage = ref(null);
+const modalMessage = ref(null);
 const schema = yupObject({
   email: yupString().required("請輸入信箱").email("信箱格式錯誤"),
   name: yupString().required("請輸入姓名"),
   message: yupString().required("請輸入訊息"),
 });
 
-const { handleSubmit, resetForm } = useForm({
+const { handleSubmit, resetForm, isSubmitting } = useForm({
   validationSchema: schema,
 });
 const onSubmit = handleSubmit(async (value) => {
-  errorMessage.value = null;
+  try {
+    isLoading.value = true;
+    errorMessage.value = null;
+    modalMessage.value = null;
 
-  await fetch("./", {
-    method: "post",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: encode({
-      "form-name": "contact-me",
-      ...value,
-    }),
-  });
+    const { name, email, message } = value;
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("message", message);
 
-  resetForm();
-  isModalOpen.value = true;
+    await fetch("https://getform.io/f/a5c8f3ec-bbf0-4857-abf6-df1456d93a65", {
+      method: "POST",
+      body: formData,
+    });
+
+    modalMessage.value = "非常感謝您的來信，站主確認完畢後將會立即回覆您。";
+  } catch (err) {
+    console.err(err.message);
+    modalMessage.value =
+      "非常抱歉表單送出失敗，請稍後片刻再麻煩您嘗試填寫表單寄送信件。";
+  } finally {
+    resetForm();
+    isLoading.value = false;
+    isModalOpen.value = true;
+  }
 }, onInvalidSubmit);
 
 function onInvalidSubmit() {
   errorMessage.value = "表單送出失敗，請確切填寫欄位後再嘗試一次。";
-}
-
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
 }
 
 function closeModal() {
