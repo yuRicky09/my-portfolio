@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="{ name: 'ProjectDetail', params: { projectName: project.name } }"
-    class="group relative flex flex-col items-center overflow-hidden bg-white/60 shadow-xl dark:bg-zinc-900"
+    class="group relative flex flex-col items-center overflow-hidden bg-white shadow-xl dark:bg-zinc-900"
   >
     <div class="overflow-hidden">
       <img
