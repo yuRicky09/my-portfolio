@@ -16,7 +16,7 @@
         <div>
           <h3>Hi👋 我是Yu Ricky~~~~</h3>
           <BaseParagraph
-            text-content="2017年畢業於東吳日文系，畢業後便前往日本就職深造，但由於2020年深受疫情影響且日本發佈緊急事態宣言造成無法出外工作只能於自家待機，但危機就是轉機，正因為這一個多月讓我第一次認識到網路開發並且撰寫下人生第一行代碼Hello World!"
+            text-content="畢業後便前往日本就職深造，但由於2020年深受疫情影響且日本發佈緊急事態宣言造成無法出外工作只能於自家待機，但危機就是轉機，正因為這一個多月讓我第一次認識到網路開發並且撰寫下人生第一行代碼Hello World!"
           />
           <BaseParagraph
             text-content="於2021年下半正式決定轉職前端工程師這條路後，便透過Udemy、YouTube、BiliBili等影音平台自學網路開發，從前端三劍客HTML、CSS、JavaScript到前端框架Vue，隨著各種知識的累積自己也從只能寫幾行代碼成長到能開發一個Single-page application。"
@@ -30,20 +30,21 @@
 
     <section>
       <BaseTitle title="My Skills" class-name="my-skill" />
-      <div class="grid-cols-tags grid place-content-center gap-5">
+      <div class="grid grid-cols-tags place-content-center gap-5">
         <BaseTag
           v-for="(icon, skillName) in skills"
           :key="skillName"
           :name="skillName"
+          class="!cursor-default hover:!opacity-100"
         >
           <component :is="icon"></component>
         </BaseTag>
       </div>
       <BaseParagraph
-        text-content="目前專精:不管是Vue Option API或是Composition API都有所接觸，個人偏好使用Composition API開發，搭配script setup寫法後讓整個SFC更簡潔並且自由度更高，且對於封裝複用邏輯來說也相較於會造成引入來源不明確的mixins來說更加好處理。專案中也時常使用Vuex或Pinia做全局狀態管理。CSS部分除了喜歡使用預處理器SCSS開發外，對於熱門框架Tailwind也有所研究，非常喜歡Tailwind Utility-First的概念，大幅減少以往規劃CSS與想類名的時間，既可加快開發速度又能不失客製化的自由度。"
+        text-content="目前專精 : 目前致力於研究Vue生態圈，不管是Vue Options API或是Composition API都有所接觸，個人偏好使用Composition API開發，搭配script setup寫法後讓整個SFC更簡潔並且自由度更高，且對於封裝複用邏輯來說也相較於會造成引入來源不明確的mixins來說更加好處理。專案中也時常使用Vuex或Pinia做全局狀態管理。CSS部分除了喜歡使用預處理器SCSS開發外，對於熱門框架Tailwind也有所研究，非常喜歡Tailwind Utility-First的概念，大幅減少以往規劃CSS與想類名的時間，既可加快開發速度又能不失客製化的自由度。"
       />
       <BaseParagraph
-        text-content="未來規劃:除了持續精進現有前端技能外，目前也正在學習Node.js培養後端能力讓自己更加了解整個前後端運作原理，並讓自己能製作的專案廣度能更廣而不受拘限。另外對於能提升SEO優化的Server-side rendering Nuxt.js也抱有強烈的興趣，當Node.js熟悉度更高後會是想著手學習的技術方向。"
+        text-content="未來規劃 : 除了持續精進現有前端技能外，目前也正在學習Node.js培養後端能力讓自己更加了解整個前後端運作原理，並讓自己能製作的專案廣度能更廣而不受拘限。另外對於能提升SEO優化的Server-side rendering Nuxt.js也抱有強烈的興趣，當Node.js熟悉度更高後會是想著手學習的技術方向。"
       />
     </section>
 
@@ -70,10 +71,13 @@
       >
         <div>
           <BaseParagraph
-            text-content="在日期間喜歡到各地旅遊，旅行期間最喜歡做的事就是到每個地區體驗溫泉設施，不同地區特有的水質與風味讓每次泡湯都能有截然不同的享受，相較於台灣獨立室的溫泉屋，覺得大眾湯泡起來更有氣氛😂。"
+            text-content="在日期間喜歡到各地旅遊，旅行期間最喜歡做的事就是到每個地區體驗溫泉設施，不同地區特有的水質與風味讓每次泡湯都能有截然不同的享受，相較於台灣獨立室的溫泉屋，覺得大眾湯泡起來更有氣氛。"
           />
           <BaseParagraph
-            text-content="平常熱愛遊玩家機遊戲，喜歡的遊戲為人中之龍、時空幻境、隻狼、與仁王等等，另外也熱愛觀看NBA，也因為NBA的原因讓自己也養成每周都有與朋友打籃球的習慣。"
+            text-content="平常熱愛遊玩家機遊戲，喜歡的遊戲為人中之龍、時空幻境、隻狼、與仁王等等，ARPG雖然一直是自己最喜歡的遊戲類型，不過最近對於魂類遊戲也是愛不釋手，可能自己被虐傾向也說不定😂。"
+          />
+          <BaseParagraph
+            text-content="另外也熱愛觀看NBA，因為NBA的原因讓自己也養成每周都有與朋友打籃球的習慣，也喜歡觀看日本綜藝節目與動畫，動畫來說比起王道熱血番來說更喜歡搞笑日常番。"
           />
         </div>
         <div class="relative h-72 w-full overflow-hidden sm:h-80 md:h-96">
@@ -133,7 +137,7 @@ const skills = {
 
 const experience = [
   {
-    time: "2019/6",
+    time: "2018/6",
     place: "九州熊本",
     company: "杖立溫泉 肥前屋",
     position: "飯店櫃檯人員",
@@ -148,7 +152,7 @@ const experience = [
     ],
   },
   {
-    time: "2020/3",
+    time: "2019/3",
     place: "兵庫縣",
     compony: "城崎溫泉 東山莊",
     position: "日式傳統旅館 接待員(仲居)",
@@ -162,7 +166,7 @@ const experience = [
     ],
   },
   {
-    time: "2020/12",
+    time: "2019/12",
     place: "東京原宿",
     compony: "THE NORTH FACE KIDS ",
     position: "門市銷售人員",
@@ -173,7 +177,7 @@ const experience = [
     ],
     achievements: [
       "工作期間於2020年1月、3月、8月此3個月成為店內業績銷售榜第一名",
-      "受到COVID-19 的影響實體店面客源大幅減少下，仍然於多個月達成個人業績銷售破百萬日幣，期間也因優異表現多次支援其他店鋪",
+      "受到COVID-19 的影響實體店面客源大幅減少下，仍然於多個月達成個人業績銷售破八十萬日幣，期間也因優異表現多次支援其他店鋪",
     ],
   },
 ];

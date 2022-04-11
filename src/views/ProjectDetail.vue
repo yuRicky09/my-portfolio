@@ -112,7 +112,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section v-if="fullpage" class="section">
       <BaseTitle title="Full Page" class-name="fullpage" />
       <div class="mx-auto w-4/5">
         <img

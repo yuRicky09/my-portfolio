@@ -3,7 +3,7 @@ export const projects = [
     name: "YuAnime",
     brief: "一個可依照動畫季度查詢動畫相關最新情報的網站",
     description:
-      "YuAnime的啟發是由於在思考如何設計自己專案樣式時，時常會藉由觀看動畫官網的視覺設計來獲取靈感，並且自己也有追動畫的習慣，想說不如就自己建一個動畫資料查詢網站，於是藉由Annict API一個彙整動畫官網、Twitter、聲優等相關資料的網站 YuAnime 就此誕生",
+      "YuAnime的啟發是由於在思考如何設計自己專案樣式時，時常會藉由觀看動畫官網的視覺設計來獲取靈感，並且自己也有追動畫的習慣，想說不如就自己建一個動畫資料查詢網站，於是藉由Annict API一個彙整動畫官網、Twitter、聲優等相關資料的網站 YuAnime 就此誕生。",
     tags: ["Vue", "Tailwind"],
     repositoryUrl: "https://github.com/yuRicky09/YuAnime",
     siteUrl: "https://yu-anime.vercel.app/",
@@ -23,7 +23,7 @@ export const projects = [
       "有別於另一個專案YUSTORY是初次就載入所有資料，這次YuAnime的資料是按需載入，對於資料的處理邏輯與分頁功能是此次花費最多的部分，最終使用onBeforeRouteUpdate來達成每次query變更時再次fetch新的資料，並且透過Skeleton防止等待資料時畫面布局空洞的問題。",
     ],
     learn: [
-      "更加熟習如何使用Vue Composition API、TailwindCSS，特別是Composition API搭配script setup的寫法讓以往Option API寫法的巢狀結構，或Setup配置中繁瑣的return都刪減掉讓整個SFC更加簡潔提升閱讀性。",
+      "更加熟習如何使用Vue Composition API、TailwindCSS，特別是Composition API搭配script setup的寫法讓以往Options API寫法的巢狀結構，或Setup配置中繁瑣的return都刪減掉讓整個SFC更加簡潔提升閱讀性。",
       "使用Vue官方推薦狀態管理套件Pinia，對於一般的小專案來說相較於Vuex我想使用Pinia會方便許多，移除Vuex中稍嫌繁瑣的mutation改為僅有state、getter、action三階段，且分別對應Option API中的data、computed、method三個觀念用起來更直覺，另外也提供了許多直接操作state的API與訂閱store等特性，使用起來確實更輕巧方便。",
       "由於動畫資料不是一次性全部fetch下來存於全局狀態管理中，而是透過query來指定要的資料，為了讓每次fetch資料時能有更好的畫面呈現與使用者體驗，製作了組件的Skeleton讓資料尚未載入完畢時也能有骨架支撐版面，減少畫面大幅變動。",
     ],
@@ -40,7 +40,7 @@ export const projects = [
     name: "YuStory",
     brief: "藉由Vue2與Firebase開發出的部落格網站",
     description:
-      "YUSTORY部落格的發想是源自於Traversy Media頻道發佈的「Vue.js & Firebase Project - FireBlogs」此教學影片。由於剛好在學習 Vue.js 與 Firebase，且也想製作一個可分享自己日本生活趣聞的網站，便決定以此影片為基礎，開發出功能更加完善的部落格網站當作自己的 side project。 如有興趣也歡迎到YUSTORY參觀整個網站架構，體驗發文流程",
+      "YUSTORY部落格的發想是源自於Traversy Media頻道發佈的「Vue.js & Firebase Project - FireBlogs」此教學影片。由於剛好在學習 Vue.js 與 Firebase，且也想製作一個可分享自己日本生活趣聞的網站，便決定以此影片為基礎，開發出功能更加完善的部落格網站當作自己的 side project。 如有興趣也歡迎到YUSTORY參觀整個網站架構，體驗發文流程。",
     tags: ["Vue", "SCSS"],
     repositoryUrl: "https://github.com/yuRicky09/YuStory",
     siteUrl: "https://yustory-ded59.firebaseapp.com/",
@@ -49,7 +49,7 @@ export const projects = [
       "即時預覽故事發佈時排版狀況",
       "可自訂故事封面",
       "依照內容、標籤、作者三大分類查找相關故事",
-      "收藏、點讚、留言功能",
+      "收藏、點讚、留言文章功能",
       "RWD 響應式設計",
     ],
     skills: [
@@ -90,9 +90,9 @@ export const projects = [
   },
   {
     name: "designo",
-    brief: "藉由Frontend Mentor提供的樣式模板所完成的多頁面網站",
+    brief: "藉由Frontend Mentor提供的樣式設計稿所完成的多頁面網站",
     description:
-      "此網站為Frontend Mentor所提供的challenge，由Frontend Mentor提供設計稿與挑戰目標而我們要做的就是利用任何工具來努力達成與設計稿一致。",
+      "此網站為Frontend Mentor所提供的挑戰，挑戰目標為利用任何工具來努力達成與設計稿一致，想藉這個挑戰熟練Vue與練習切版。",
     tags: ["Vue", "Tailwind"],
     repositoryUrl: "https://github.com/yuRicky09/designo-website",
     siteUrl: "https://designo-website-vue.netlify.app/",
@@ -128,5 +128,66 @@ export const projects = [
       "designo-sample3",
       "designo-sample4",
     ],
+  },
+  {
+    name: "interactive-comments-app",
+    brief: "藉由Frontend Mentor提供的設計稿所完成的論壇式互動留言app",
+    description:
+      "此網站為Frontend Mentor所提供的挑戰，挑戰內容為要能對留言進行CRUD操作，並且要盡量切出與設計稿一致的樣式。",
+    tags: ["Vue", "SCSS"],
+    repositoryUrl: "https://github.com/yuRicky09/interactive-comments-app",
+    siteUrl: "https://interactive-comments-app.firebaseapp.com/",
+    features: [
+      "發佈新留言或是回覆已存在留言",
+      "留言的CRUD",
+      "可對留言點讚",
+      "RWD 響應式設計",
+    ],
+    skills: ["Vue3", "Vuex", "Firebase", "SCSS"],
+    purpose: [
+      "由於留言功能是現今網站很常見的功能，想藉這個機會挑戰實現此功能並且提升Vue3與Firebase9的熟練度",
+    ],
+    problems: [
+      "首先專案中遇到的問題是要如何存取留言，後來透過網路查找發現1-level deep replies的留言情境可以透過參考parentId方式來達成，所有直接回覆於文章的留言都作為根留言並且parentId欄位值設置為null，而所有直接回覆於此根留言又或是回覆根留言的回覆的留言的parentId的值都將參考根留言的id，如此一來就能實現1-level deep的留言情境。",
+      "實作中由於留言以及回覆留言的留言很明顯不管是邏輯與樣式幾乎是一樣的，在思考如何規劃組件時也花了不少時間，後來發現了Recursive Components遞迴組件可以很有效的處理這種資料結構， 於組件內再引入自己並且再透過v-if條件渲染防止無窮迴圈。",
+    ],
+    learn: [
+      "學習到了留言/回覆的資料處理方式。",
+      "應用了Recursive Components此概念來處理留言下還有回覆(留言)，回覆下又可能有回覆此種資料結構的畫面渲染。",
+      "使用了BEM設計模式來為class命名。",
+    ],
+    cover: "comments-cover",
+    fullpage: "comments-fullpage",
+    images: ["comments-sample1", "comments-sample2", "comments-sample3"],
+  },
+  {
+    name: "Calculator",
+    brief: "使用原生JavaScript製作出的簡易計算機。",
+    description:
+      "計算機一直都是滿熱門的小型side project題目，決定自己也來實作一個計算機，並且可以有累加功能且能記錄下每筆計算過程與結果。",
+    tags: ["JavaScript", "SCSS"],
+    repositoryUrl: "https://github.com/yuRicky09/JavaScript-Calculator",
+    siteUrl: "https://vanilla-js-calculator-try-it.netlify.app/",
+    features: [
+      "可用點擊按鈕或鍵盤來操作計算機",
+      "可記錄每筆計算結果",
+      "累加計算等操作",
+      "RWD 響應式設計",
+    ],
+    skills: ["JavaScript", "SCSS"],
+    purpose: [
+      "希望能透過實作一個計算機來練習邏輯判斷以及事件監聽，加深原生JS的熟練度。",
+    ],
+    problems: [
+      "原本想說只是基本的四則運算的計算機的話應該不會太難，結果發現邏輯比想像中的還複雜，按鈕順序間的條件判斷、每個按鈕的功能、字串與數字的型別處理很多都環環相扣，很多邏輯也是在多次測試中才發現沒有處理到的。 雖然只是個小 project 但過程中意外地有趣也遇到不少挑戰，大概是人生中按計算機按最久的一次了😄😄。",
+    ],
+    learn: [
+      "熟悉if switch兩種條件句的使用時機。",
+      "學習各樣監聽事件，如keydown、click、transitionend等。",
+      "string與number型別處理。",
+    ],
+    cover: "calculator-cover",
+    fullpage: null,
+    images: ["calculator-sample1", "calculator-sample2"],
   },
 ];

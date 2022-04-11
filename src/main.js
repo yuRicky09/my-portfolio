@@ -5,6 +5,9 @@ import router from "@/router";
 import VueGoogleMaps from "@fawmi/vue-google-maps";
 import "./index.css";
 import "default-passive-events";
+import smoothscroll from "smoothscroll-polyfill";
+
+smoothscroll.polyfill();
 
 const app = createApp(App);
 

@@ -2,10 +2,7 @@
   <div>
     <div class="mb-8 flex flex-col gap-2">
       <BaseTitle title="Contact Me" class-name="contact" class="!my-0" />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi officia
-        dolorem itaque.
-      </p>
+      <p>如果您正在尋找開發人員，或是有任何問題，歡迎隨時與我聯繫。</p>
     </div>
 
     <form enctype="multipart/form-data" method="post" @submit="onSubmit">
