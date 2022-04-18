@@ -36,8 +36,7 @@ import SeeMoreLink from "@/components/home/SeeMoreLink.vue";
 import BaseTitle from "@/components/UI/BaseTitle.vue";
 import ProjectListItem from "@/components/projects/ProjectListItem.vue";
 import { projects } from "@/data";
-import { computed } from "vue";
 import GoogleMap from "@/components/contact/GoogleMap.vue";
 
-const recentProjects = computed(() => projects.slice(0, 2));
+const recentProjects = projects.slice(0, 2);
 </script>

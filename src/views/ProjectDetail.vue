@@ -40,7 +40,7 @@
         <BulletedList list-title="Skills">
           <BulletedListItem
             :items="project.skills"
-            bulleted-class="before:text-green-500 before:content-['🔧']"
+            bulleted-class="before:content-['🔧']"
           />
         </BulletedList>
       </div>

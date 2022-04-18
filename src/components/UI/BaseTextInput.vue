@@ -7,6 +7,7 @@
     <div class="relative w-full">
       <input
         v-if="!isTextareaTag"
+        :id="name"
         v-model="inputValue"
         :type="type"
         class="peer border-2 dark:bg-zinc-900"
@@ -18,6 +19,7 @@
       />
       <textarea
         v-else
+        :id="name"
         v-model="inputValue"
         rows="3"
         class="peer resize-none border-2 dark:bg-zinc-900"
@@ -28,6 +30,7 @@
         }"
       ></textarea>
       <label
+        :for="name"
         class="absolute left-4 transition-all duration-[400ms]"
         :class="[
           labelPosition,

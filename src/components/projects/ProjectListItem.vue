@@ -6,7 +6,7 @@
     <div class="overflow-hidden">
       <img
         :src="cover"
-        alt="Yustory Project Cover"
+        :alt="project.name"
         class="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
     </div>
@@ -18,7 +18,7 @@
     </div>
 
     <div
-      class="hover-desktop:group-hover:translate-y-0 hover-desktop:group-hover:duration-300 absolute top-0 left-0 grid h-full w-full translate-y-full place-items-center bg-black/50 backdrop-blur-[2px] transition-transform duration-1000"
+      class="absolute top-0 left-0 grid h-full w-full translate-y-full place-items-center bg-black/50 backdrop-blur-[2px] transition-transform duration-1000 hover-desktop:group-hover:translate-y-0 hover-desktop:group-hover:duration-300"
     >
       <div
         class="flex items-center justify-center bg-orange-50 p-6 text-xl uppercase dark:bg-zinc-800"

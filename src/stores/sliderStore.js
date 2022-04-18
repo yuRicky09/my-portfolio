@@ -11,14 +11,16 @@ export const useSliderStore = defineStore("slider", () => {
   const lgihtBoxStore = useLightBoxStore();
 
   const slideAnimation = computed(() => {
-    const enterActiveClass =
-      animationMode.value === "right-to-left"
-        ? "animate-right-to-left-in"
-        : "animate-left-to-right-in";
-    const leaveActiveClass =
-      animationMode.value === "right-to-left"
-        ? "animate-right-to-left-out"
-        : "animate-left-to-right-out";
+    let enterActiveClass;
+    let leaveActiveClass;
+
+    if (animationMode.value === "right-to-left") {
+      enterActiveClass = "animate-right-to-left-in";
+      leaveActiveClass = "animate-right-to-left-out";
+    } else if (animationMode.value === "left-to-right") {
+      enterActiveClass = "animate-left-to-right-in";
+      leaveActiveClass = "animate-left-to-right-out";
+    }
 
     return {
       enterActiveClass,

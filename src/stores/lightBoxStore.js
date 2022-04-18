@@ -1,11 +1,11 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useSliderStore } from "@/stores/sliderStore";
 
 export const useLightBoxStore = defineStore("lightBox", () => {
   const isZoomIn = ref(false);
   const zoomInImgUrl = ref(null);
-  const headerEl = document.querySelector("header");
+  const headerEl = ref(null);
   const sliderStore = useSliderStore();
 
   function zoomInImg(imgUrl) {
@@ -42,16 +42,20 @@ export const useLightBoxStore = defineStore("lightBox", () => {
     document.body.style.paddingRight = `${scrollbarWidth}px`;
 
     const paddingRight = parseInt(
-      window.getComputedStyle(headerEl, null).getPropertyValue("padding-right")
+      window
+        .getComputedStyle(headerEl.value, null)
+        .getPropertyValue("padding-right")
     );
-    headerEl.style.paddingRight = `${paddingRight + scrollbarWidth}px`;
+    headerEl.value.style.paddingRight = `${paddingRight + scrollbarWidth}px`;
   }
 
   function showScrollbar() {
     document.body.style.overflowY = "";
     document.body.style.paddingRight = "";
-    headerEl.style.paddingRight = "";
+    headerEl.value.style.paddingRight = "";
   }
+
+  onMounted(() => (headerEl.value = document.querySelector("header")));
 
   return {
     isZoomIn,

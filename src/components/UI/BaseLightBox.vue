@@ -2,7 +2,7 @@
   <div class="relative mx-auto h-[70vh] w-[80rem]">
     <img :src="zoomInImgUrl" class="h-full w-full object-cover object-center" />
     <CloseIcon
-      class="absolute right-0 top-0 h-12 w-12 -translate-y-full cursor-pointer fill-white/90"
+      class="absolute right-0 top-0 h-12 w-12 -translate-y-full cursor-pointer fill-white/90 hover:opacity-80"
       @click="zoomOutImg"
     />
   </div>

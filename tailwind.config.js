@@ -20,7 +20,7 @@ module.exports = {
         body: ["Oswald", "Arial", "Shippori Antique B1", "sans-serif"],
       },
       gridTemplateColumns: {
-        tags: "repeat(auto-fit, minmax(min-content, 8rem) )",
+        tags: "repeat(auto-fit, minmax(min-content, 8rem))",
       },
       keyframes: {
         "fade-down": {

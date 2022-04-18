@@ -1,6 +1,6 @@
 <template>
   <header
-    class="xs:px-6 fixed z-20 flex w-full items-center justify-between bg-orange-100/50 py-3 px-4 dark:bg-zinc-800/50 md:px-8 lg:px-12"
+    class="fixed z-20 flex w-full items-center justify-between bg-orange-100/50 py-3 px-4 dark:bg-zinc-800/50 xs:px-6 md:px-8 lg:px-12"
   >
     <router-link
       class="inline-block whitespace-nowrap font-['Comforter'] text-2xl font-bold"
@@ -136,7 +136,7 @@ function setThemeMode(selectedMode, currentMode) {
   document.documentElement.classList.remove(currentMode);
   document.documentElement.classList.add(selectedMode);
 
-  isDarkMode.value = selectedMode === "dark" ? true : false;
+  isDarkMode.value = selectedMode === "dark";
 }
 
 function closeMenu() {
