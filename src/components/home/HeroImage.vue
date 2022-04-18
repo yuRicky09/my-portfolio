@@ -24,7 +24,7 @@
         <div class="mb-4 flex flex-col gap-2 lg:mb-8">
           <p>Hi there,👋 I'm</p>
           <h1
-            class="underline decoration-violet-500 decoration-4 underline-offset-2 xl:text-5xl 2xl:text-8xl"
+            class="underline decoration-violet-500 decoration-4 underline-offset-2 xl:text-5xl 2xl:text-[5rem]"
           >
             Yu Ricky
           </h1>
