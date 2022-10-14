@@ -6,9 +6,12 @@ import VueGoogleMaps from "@fawmi/vue-google-maps";
 import "./index.css";
 import "default-passive-events";
 import smoothscroll from "smoothscroll-polyfill";
+import vCon from "vconsole";
 
 smoothscroll.polyfill();
 
+const vConsole = new vCon();
+vConsole.show();
 const app = createApp(App);
 
 app.use(router);
