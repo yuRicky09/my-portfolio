@@ -10,8 +10,10 @@ import vCon from "vconsole";
 
 smoothscroll.polyfill();
 
-const vConsole = new vCon();
-vConsole.show();
+if (import.meta.env.MODE === "development") {
+  new vCon();
+}
+
 const app = createApp(App);
 
 app.use(router);
